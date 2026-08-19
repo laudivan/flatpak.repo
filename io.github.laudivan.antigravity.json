@@ -34,7 +34,7 @@
           "filename": "antigravity-linux-x64.tar.gz",
           "url": "https://antigravity.google/download/linux/x64/antigravity-linux-x64.tar.gz",
           "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
-          "size": 0,
+          "size": 1,
           "only-arches": [
             "x86_64"
           ]
@@ -44,7 +44,7 @@
           "filename": "antigravity-linux-arm64.tar.gz",
           "url": "https://antigravity.google/download/linux/arm64/antigravity-linux-arm64.tar.gz",
           "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
-          "size": 0,
+          "size": 1,
           "only-arches": [
             "aarch64"
           ]
