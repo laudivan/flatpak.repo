@@ -20,11 +20,11 @@ This repository contains the Flatpak packaging manifest and build definitions fo
   - `aarch64`: `https://antigravity.google/download/linux/arm64/antigravity-linux-arm64.tar.gz`
 - **Permissions**:
   - `--share=network`: Remote agent communications, extensions, and network connectivity
+  - `--share=ipc`: Inter-process communication
   - `--socket=x11`, `--socket=wayland`, `--socket=fallback-x11`: Modern display server support
   - `--device=dri`: Hardware/GPU graphics acceleration
   - `--socket=pulseaudio`: Audio support
   - `--filesystem=host`: Full host filesystem access for workspace and project directories
-  - `--ipc=host`: Inter-process communication
 
 ---
 
