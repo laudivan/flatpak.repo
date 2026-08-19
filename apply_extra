@@ -6,13 +6,8 @@ set -euo pipefail
 
 mkdir -p /app/extra
 
-if [ -f antigravity-linux-x64.tar.gz ]; then
-  ARCHIVE="antigravity-linux-x64.tar.gz"
-elif [ -f antigravity-linux-arm64.tar.gz ]; then
-  ARCHIVE="antigravity-linux-arm64.tar.gz"
-else
-  # Fallback to any matching archive in the working directory
-  ARCHIVE=$(find . -maxdepth 1 -name "antigravity-linux-*.tar.gz" | head -n 1)
+if [ -f Antigravity.tar.gz ]; then
+  ARCHIVE="Antigravity.tar.gz"
 fi
 
 if [ -n "${ARCHIVE:-}" ] && [ -f "${ARCHIVE}" ]; then
