@@ -1,0 +1,62 @@
+{
+  "app-id": "io.github.laudivan.antigravity",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "24.08",
+  "sdk": "org.freedesktop.Sdk",
+  "base": "org.electronjs.Electron2.BaseApp",
+  "base-version": "24.08",
+  "command": "antigravity",
+  "separate-locales": false,
+  "finish-args": [
+    "--share=network",
+    "--socket=x11",
+    "--socket=wayland",
+    "--socket=fallback-x11",
+    "--device=dri",
+    "--socket=pulseaudio",
+    "--filesystem=host",
+    "--ipc=host"
+  ],
+  "modules": [
+    {
+      "name": "antigravity",
+      "buildsystem": "simple",
+      "build-commands": [
+        "install -Dm755 apply_extra /app/bin/apply_extra",
+        "install -Dm755 antigravity.sh /app/bin/antigravity",
+        "install -Dm644 io.github.laudivan.antigravity.desktop /app/share/applications/io.github.laudivan.antigravity.desktop",
+        "install -Dm644 io.github.laudivan.antigravity.metainfo.xml /app/share/metainfo/io.github.laudivan.antigravity.metainfo.xml",
+        "install -Dm644 io.github.laudivan.antigravity.svg /app/share/icons/hicolor/scalable/apps/io.github.laudivan.antigravity.svg"
+      ],
+      "sources": [
+        {
+          "type": "extra-data",
+          "filename": "antigravity-linux-x64.tar.gz",
+          "url": "https://antigravity.google/download/linux/x64/antigravity-linux-x64.tar.gz",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "size": 0
+        },
+        {
+          "type": "file",
+          "path": "apply_extra"
+        },
+        {
+          "type": "file",
+          "path": "antigravity.sh"
+        },
+        {
+          "type": "file",
+          "path": "io.github.laudivan.antigravity.desktop"
+        },
+        {
+          "type": "file",
+          "path": "io.github.laudivan.antigravity.metainfo.xml"
+        },
+        {
+          "type": "file",
+          "path": "io.github.laudivan.antigravity.svg"
+        }
+      ]
+    }
+  ]
+}

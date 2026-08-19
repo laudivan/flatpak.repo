@@ -1,0 +1,9 @@
+#!/bin/bash
+set -euo pipefail
+
+# Flatpak extra-data installer script
+# Extracts dynamic payload downloaded from https://antigravity.google
+
+mkdir -p /app/extra
+tar -xzf antigravity-linux-x64.tar.gz -C /app/extra --strip-components=1 || tar -xzf antigravity-linux-x64.tar.gz -C /app/extra
+rm -f antigravity-linux-x64.tar.gz
