@@ -9,12 +9,12 @@ separate-locales: false
 finish-args:
   - --share=network
   - --share=ipc
-  - --socket=x11
+  - --talk-name=org.freedesktop.Notifications
   - --socket=wayland
-  - --socket=fallback-x11
   - --device=dri
   - --socket=pulseaudio
-  - --filesystem=host
+  - --filesystem=home
+  - --env=APPIMAGE=false
 modules:
   - name: antigravity
     buildsystem: simple
@@ -39,8 +39,12 @@ modules:
         size: 167868357
         only-arches:
           - aarch64
-      - type: file
-        path: apply_extra
+      - type: script
+        dest-filename: apply_extra
+        commands:
+           - mkdir -p /app/extra
+           - tar -xzf Antigravity.tar.gz -C /app/extra --strip-components=1
+           - rm -f Antigravity.tar.gz
       - type: file
         path: antigravity.sh
       - type: file
