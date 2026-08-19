@@ -31,20 +31,20 @@
       "sources": [
         {
           "type": "extra-data",
-          "filename": "antigravity-linux-x64.tar.gz",
-          "url": "https://antigravity.google/download/linux/x64/antigravity-linux-x64.tar.gz",
-          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
-          "size": 1,
+          "filename": "Antigravity.tar.gz",
+          "url": "https://storage.googleapis.com/antigravity-public/antigravity-hub/2.8.1-6512087774658560/linux-x64/Antigravity.tar.gz",
+          "sha256": "23f6c3bfef2b3326f8b747cd9e15ba3401c702280436e4e03b9a863c6678eff3",
+          "size": 170782155,
           "only-arches": [
             "x86_64"
           ]
         },
         {
           "type": "extra-data",
-          "filename": "antigravity-linux-arm64.tar.gz",
-          "url": "https://antigravity.google/download/linux/arm64/antigravity-linux-arm64.tar.gz",
-          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
-          "size": 1,
+          "filename": "Antigravity.tar.gz",
+          "url": "https://storage.googleapis.com/antigravity-public/antigravity-hub/2.8.1-6512087774658560/linux-arm/Antigravity.tar.gz",
+          "sha256": "d471b1c342be3195c77dd20de7dd2c57462a076acebdf9aea12b916ab2bd326c",
+          "size": 167868357,
           "only-arches": [
             "aarch64"
           ]
