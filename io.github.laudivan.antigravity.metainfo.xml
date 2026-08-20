@@ -25,9 +25,9 @@
   </provides>
   <content_rating type="oars-1.1" />
   <releases>
-    <release version="2.8.1-6512087774658560" date="2026-08-19">
+    <release version="{version}" build="{build}" date="{date}">
       <description>
-        <p>Antigravity release 2.8.1-6512087774658560.</p>
+        <p>Antigravity release {version}-{build}.</p>
       </description>
     </release>
   </releases>
