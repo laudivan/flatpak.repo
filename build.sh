@@ -13,8 +13,6 @@ BUILD_DIR="/tmp/unofficial-antigravity.flatpak"
 
 BASE_URL="https://storage.googleapis.com/antigravity-public/antigravity-hub"
 
-FILE="Antigravity.tar.gz"
-
 rm -fr repo
 
 [ -d "$BUILD_DIR" ] && sudo rm -fr "$BUILD_DIR"
@@ -38,21 +36,17 @@ sed -i \
     -e "s/{build}/$BUILD/g" \
     "$BUILD_DIR/$APP_ID.yaml"
 
-for ARCH in {arm,x64}; do
-    URL="$BASE_URL/$APP_VERSION-$BUILD/linux-$ARCH/$FILE"
+for ARCH in {x64,arm}; do
+    FILE="antigravity-$APP_VERSION-$BUILD-$ARCH.tar.gz"
+
+    URL="$BASE_URL/$APP_VERSION-$BUILD/linux-$ARCH/Antigravity.tar.gz"
 
     curl -sSL -o "$BUILD_DIR/$FILE" "$URL"
 
-    SIZE="$(stat -c %s "$BUILD_DIR/$FILE")"
-
-    SHA="$(sha256sum "$BUILD_DIR/$FILE" | cut -d ' ' -f1)"
-
     sed -i \
-        -e "s/{size_$ARCH}/$SIZE/" \
-        -e "s/{sha_$ARCH}/$SHA/" \
+        -e "s/{size_$ARCH}/$(stat -c %s "$BUILD_DIR/$FILE")/" \
+        -e "s/{sha_$ARCH}/$(sha256sum "$BUILD_DIR/$FILE" | cut -d ' ' -f1)/" \
         "$BUILD_DIR/$APP_ID.yaml"
-
-    rm -f "$BUILD_DIR/$FILE"
 done
 
 mkdir -p "$BUILD_DIR/repo"
