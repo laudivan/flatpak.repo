@@ -1,7 +1,9 @@
 #!/bin/bash
+set -euo pipefail
 
 mkdir -p /app/extra
 
-tar -xzf Antigravity.tar.gz -C /app/extra --strip-components=1
+tar -xzf Antigravity.tar.gz -C /app/extra --strip-components=1 || \
+tar -xzf Antigravity.tar.gz -C /app/extra
 
 rm -f Antigravity.tar.gz
