@@ -14,7 +14,7 @@ finish-args:
   - --device=dri
   - --socket=pulseaudio
   - --filesystem=home
-  - --env=APPIMAGE=false
+  - --env=APPIMAGE=true
 modules:
   - name: antigravity
     buildsystem: simple
@@ -27,24 +27,20 @@ modules:
     sources:
       - type: extra-data
         filename: Antigravity.tar.gz
-        url: <url-x64>
-        sha256: <sha-x64>
-        size: <size-x64>
+        url: https://storage.googleapis.com/antigravity-public/antigravity-hub/{version}-{build}/linux-x64/Antigravity.tar.gz
+        sha256: {sha_x64}
+        size: {size_x64}
         only-arches:
           - x86_64
       - type: extra-data
         filename: Antigravity.tar.gz
-        url: <url-arm>
-        sha256: <sha-arm>
-        size: <size-arm>
+        url: https://storage.googleapis.com/antigravity-public/antigravity-hub/{version}-{build}/linux-arm/Antigravity.tar.gz
+        sha256: {sha_arm}
+        size: {size_arm}
         only-arches:
           - aarch64
-      - type: script
-        dest-filename: apply_extra
-        commands:
-           - mkdir -p /app/extra
-           - tar -xzf Antigravity.tar.gz -C /app/extra --strip-components=1
-           - rm -f Antigravity.tar.gz
+      - type: file
+        path: apply_extra
       - type: file
         path: antigravity.sh
       - type: file
@@ -52,4 +48,4 @@ modules:
       - type: file
         path: io.github.laudivan.antigravity.metainfo.xml
       - type: file
-        path: io.github.laudivan.antigravity.png
+        path: io.github.laudivan.antigravity.svg
