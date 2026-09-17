@@ -3,9 +3,9 @@
 
 APP_ID="io.github.laudivan.antigravity"
 
-APP_VERSION="2.8.1"
+APP_VERSION="2.14.0"
 
-BUILD="6512087774658560"
+BUILD="5449404535144448"
 
 PROJECT_DIR="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
