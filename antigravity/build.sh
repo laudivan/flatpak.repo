@@ -13,7 +13,7 @@ BUILD_DIR="/tmp/unofficial-antigravity.flatpak"
 
 BASE_URL="https://storage.googleapis.com/antigravity-public/antigravity-hub"
 
-rm -fr repo
+rm -f ../repo/${APP_ID}.flatpak
 
 [ -d "$BUILD_DIR" ] && sudo rm -fr "$BUILD_DIR"
 
@@ -59,7 +59,7 @@ sudo sh <<SCRIPT
 	    build "$APP_ID.yaml"
 
     flatpak build-bundle \
-	    repo \
+	    ../repo \
 	    "$APP_ID.flatpak" \
 	    "$APP_ID"
 
